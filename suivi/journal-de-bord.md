@@ -20,7 +20,7 @@
 - **Solutions apportées :**
   - RAS
 - **Notes et réflexions :**
-  - Observations, idées, remarques importantes
+  - RAS
 - **TO DO**
   - début des scripts
 
@@ -28,17 +28,33 @@
 
 ### [05/03/2025]
 - **Objectifs du jour :**
-  - Créations des Vm et début des scripts d'automatisation
+  - ajustement Vagrantfile + début scripts pour les VM
 - **Tâches réalisées :**
-  - xxxxxxxxxxxxxxxxxxxxxxxxxx
+  - construct-vm.sh, les Vagrantfiles
 - **Problèmes rencontrés :**
-  - xxxxxxxxxxxxxxxxxxxxxxxxx
+  - range IP pour le host only sur virtualbox
 - **Solutions apportées :**
-  - xxxxxxxxxxxxxxxxxxxxxxxx
+  - checher la doc pour le bon range
 - **Notes et réflexions :**
-  - xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  - pas de machine pour tester la solution
 - **TO DO**
-  - xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  - tests sur machine + création des commandes nmap + firewall
+
+---
+
+### [JJ/MM/AAAA]
+- **Objectifs du jour :**
+  - [Décrire les objectifs de la journée]
+- **Tâches réalisées :**
+  - [Détail des tâches accomplies]
+- **Problèmes rencontrés :**
+  - [Liste des problèmes et blocages]
+- **Solutions apportées :**
+  - [Solutions trouvées ou actions à mener]
+- **Notes et réflexions :**
+  - [Observations, idées, remarques importantes]
+- **TO DO**
+  - [A faire pour la prochaine séance]
 
 ---
 
