@@ -1,1 +1,5 @@
 https://www.ionos.fr/digitalguide/serveur/outils/tutoriel-iptables-des-regles-pour-les-paquets-de-donnees/
+
+
+condition IF :
+ https://www.pluralsight.com/resources/blog/cloud/conditions-in-bash-scripting-if-statements
