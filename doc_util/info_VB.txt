@@ -1,0 +1,5 @@
+contrainte : 
+virtualbox, accepte que le range 192.168.56.0/21 pour le host only, 
+ainsi nous nous choisirons ce plan IP pour les VMs
+
+https://www.virtualbox.org/manual/ch06.html#network_hostonly
