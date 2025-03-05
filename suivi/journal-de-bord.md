@@ -28,17 +28,17 @@
 
 ### [05/03/2025]
 - **Objectifs du jour :**
-  - [Décrire les objectifs de la 
+  - Créations des Vm et début des scripts d'automatisation
 - **Tâches réalisées :**
-  - [Détail des tâches accomplies]
+  - xxxxxxxxxxxxxxxxxxxxxxxxxx
 - **Problèmes rencontrés :**
-  - [Liste des problèmes et blocages]
+  - xxxxxxxxxxxxxxxxxxxxxxxxx
 - **Solutions apportées :**
-  - [Solutions trouvées ou actions à mener]
+  - xxxxxxxxxxxxxxxxxxxxxxxx
 - **Notes et réflexions :**
-  - [Observations, idées, remarques importantes]
+  - xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 - **TO DO**
-  - [A faire pour la prochaine séance]
+  - xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ---
 
