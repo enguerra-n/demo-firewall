@@ -26,9 +26,9 @@
 
 ---
 
-### [JJ/MM/AAAA]
+### [05/03/2025]
 - **Objectifs du jour :**
-  - [Décrire les objectifs de la journée]
+  - [Décrire les objectifs de la 
 - **Tâches réalisées :**
   - [Détail des tâches accomplies]
 - **Problèmes rencontrés :**
