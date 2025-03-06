@@ -1,6 +1,6 @@
 #!/bin/bash
-$folderserver = ../sae_Firewall/server
-$folderclient = ../sae_Firewall/client
+folderserver = ../sae_Firewall/server
+folderclient = ../sae_Firewall/client
 
 
 # check Vagrant install
@@ -21,10 +21,10 @@ fi
 
 
 ### pushd et popd permet de changer de dossier "temporairement"
-pushd $folderserver
+pushd ../sae_Firewall/server/
 vagrant up
 popd
 
-pushd $folderclient
+pushd ../sae_Firewall/client/
 vagrant up
 popd
