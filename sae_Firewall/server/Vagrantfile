@@ -7,22 +7,22 @@ Vagrant.configure("2") do |config|
       server.vm.provider "virtualbox" do |vb|
         vb.memory = "1024"  # 1 Go de RAM pour la VM serveur
       end
-      server.vm.provision "file", source: "../../scripts/manage-firwall.sh", destination: "/tmp"
-      server.vm.provision "file", source: "front_web.html", destination: "/tmp"
+      #server.vm.provision "file", source: "../../scripts/manage-firwall.sh", destination: "/tmp"
+      #server.vm.provision "file", source: "front_web.html", destination: "/tmp"
       server.vm.provision "shell", inline: <<-SHELL
         # Mise à jour des paquets
-        #apt-get update && apt-get upgrade -y
+        apt-get update && apt-get upgrade -y
         # Installation de Nginx, ufw
-        #apt-get install -y nginx ufw
+        apt-get install -y nginx ufw
         # Configuration de ufw (activation et configuration de base)
-        #ufw allow 'Nginx HTTP'
-        #ufw enable
-        #ufw status
+        ufw allow 'Nginx HTTP'
+        ufw enable
+        ufw status
         # application index
         #cp /tmp/index.html /var/www/html/index.html
         #echo '<html><body><h1>Page Statique Nginx</h1></body></html>' > /var/www/html/index.html
         # Redémarrer nginx pour s'assurer qu'il sert la page
-        #systemctl restart nginx
+        systemctl restart nginx
       SHELL
     end
 end
