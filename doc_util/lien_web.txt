@@ -3,3 +3,8 @@ https://www.ionos.fr/digitalguide/serveur/outils/tutoriel-iptables-des-regles-po
 
 condition IF :
  https://www.pluralsight.com/resources/blog/cloud/conditions-in-bash-scripting-if-statements
+
+
+ ufw : 
+
+ https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-20-04-fr
