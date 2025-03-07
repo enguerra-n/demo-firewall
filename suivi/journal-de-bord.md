@@ -42,6 +42,22 @@
 
 ---
 
+### [06/03/2025]
+- **Objectifs du jour :**
+  - tester le fonctionnement du scritps construct_vm
+- **Tâches réalisées :**
+  - test OK
+- **Problèmes rencontrés :**
+  - PC crash lors du démarrage de la deuxième VM
+- **Solutions apportées :**
+  - Aucune
+- **Notes et réflexions :**
+  - faire la création du firewall en task n°1
+- **TO DO**
+  - firewall
+
+---
+
 ### [JJ/MM/AAAA]
 - **Objectifs du jour :**
   - [Décrire les objectifs de la journée]
