@@ -1,0 +1,1 @@
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"C:/école/BUT/3eme_annee/SAE61/demo-firewall/sae_Firewall/server","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
