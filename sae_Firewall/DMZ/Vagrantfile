@@ -8,6 +8,7 @@ Vagrant.configure("2") do |config|
       dmz.vm.provider "virtualbox" do |vb|
         vb.memory = "1024"  # 1 Go de RAM pour la VM serveur
       end
+      config.vm.provision "shell", path: "set-up_iptables.sh"
       dmz.vm.provision "shell", inline: <<-SHELL
         # Activer le routage IP
         echo 1 > /proc/sys/net/ipv4/ip_forward
