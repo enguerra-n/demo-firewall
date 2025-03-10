@@ -18,11 +18,18 @@
   - Scripts de démonstration du fonctionnement du firewall.
   - Journal de travail.
 
-## 🔥 Introduction aux Firewalls
-- **Firewall** : Filtre les flux de données entrants et sortants.
-- Types :
-  - **Stateless** : Les règles ne prennent pas en compte l'historique des connexions.
-  - **Stateful** : Les règles sont basées sur l'historique des connexions.
+## 🔥 Les différents service de firewall
+- **IPTABLE** 
+- **FIREWALLD**
+  | Critère               | `iptables` | `firewalld` |
+|----------------------|------------|------------|
+| **Facilité d’utilisation** | ❌ Complexe (commandes longues) | ✅ Simple (zones et services) |
+| **Dynamisme** | ❌ Statique (redémarrage requis) | ✅ Dynamique (modifications à chaud) |
+| **Performance** | ✅ Rapide et léger | ❌ Légèrement plus gourmand |
+| **Flexibilité** | ✅ Très configurable | ❌ Moins adapté aux besoins avancés |
+| **Gestion des règles** | ❌ Moins intuitif | ✅ Plus clair grâce aux zones |
+| **Compatibilité** | ✅ Supporté par toutes les distributions | ✅ Par défaut sur RHEL, CentOS, Fedora |
+
 
 ## 🛡️ Sécurisation du Serveur Web Nginx
 - **Nginx** : Serveur web flexible mais vulnérable par défaut.
