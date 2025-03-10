@@ -28,3 +28,11 @@ popd
 pushd ../sae_Firewall/client/
 vagrant up
 popd
+
+pushd ../sae_Firewall/DMZ/
+vagrant up
+popd
+
+pushd ../sae_Firewall/INTERNET/
+vagrant up
+popd
