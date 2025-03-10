@@ -21,14 +21,16 @@
 ## 🔥 Les différents service de firewall
 - **IPTABLE** 
 - **FIREWALLD**
-  | Critère               | `iptables` | `firewalld` |
-|----------------------|------------|------------|
+  
+| Critère               | `iptables` | `firewalld` |
+|---------------------- |------------|------------|
 | **Facilité d’utilisation** | ❌ Complexe (commandes longues) | ✅ Simple (zones et services) |
 | **Dynamisme** | ❌ Statique (redémarrage requis) | ✅ Dynamique (modifications à chaud) |
 | **Performance** | ✅ Rapide et léger | ❌ Légèrement plus gourmand |
 | **Flexibilité** | ✅ Très configurable | ❌ Moins adapté aux besoins avancés |
 | **Gestion des règles** | ❌ Moins intuitif | ✅ Plus clair grâce aux zones |
 | **Compatibilité** | ✅ Supporté par toutes les distributions | ✅ Par défaut sur RHEL, CentOS, Fedora |
+
 
 
 ## 🛡️ Sécurisation du Serveur Web Nginx
