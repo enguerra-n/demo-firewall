@@ -21,15 +21,18 @@
 ## 🔥 Les différents service de firewall
 - **IPTABLE** 
 - **FIREWALLD**
+- **UFW**
   
-| Critère               | `iptables` | `firewalld` |
-|---------------------- |------------|------------|
-| **Facilité d’utilisation** | ❌ Complexe (commandes longues) | ✅ Simple (zones et services) |
-| **Dynamisme** | ❌ Statique (redémarrage requis) | ✅ Dynamique (modifications à chaud) |
-| **Performance** | ✅ Rapide et léger | ❌ Légèrement plus gourmand |
-| **Flexibilité** | ✅ Très configurable | ❌ Moins adapté aux besoins avancés |
-| **Gestion des règles** | ❌ Moins intuitif | ✅ Plus clair grâce aux zones |
-| **Compatibilité** | ✅ Supporté par toutes les distributions | ✅ Par défaut sur RHEL, CentOS, Fedora |
+| Critère               | `iptables` | `firewalld` | `ufw` |
+|---------------------- |------------|------------|------|
+| **Facilité d’utilisation** | ❌ Complexe (commandes longues) | ✅ Simple (zones et services) | ✅ Très simple (commandes courtes) |
+| **Dynamisme** | ❌ Statique (redémarrage requis) | ✅ Dynamique (modifications à chaud) | ❌ Nécessite un rechargement |
+| **Performance** | ✅ Rapide et léger | ❌ Légèrement plus gourmand | ✅ Léger et efficace |
+| **Flexibilité** | ✅ Très configurable | ❌ Moins adapté aux besoins avancés | ❌ Moins flexible qu’`iptables` |
+| **Gestion des règles** | ❌ Moins intuitif | ✅ Plus clair grâce aux zones | ✅ Facile grâce à une syntaxe simplifiée |
+| **Compatibilité** | ✅ Supporté par toutes les distributions | ✅ Par défaut sur RHEL, CentOS, Fedora | ✅ Disponible sur Debian, Ubuntu (par défaut) |
+
+
 
 
 
