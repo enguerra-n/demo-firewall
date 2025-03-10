@@ -42,7 +42,7 @@
 
 ## 📝 Etapes du Travail
 1. **Création des VMs** avec Vagrant (2 VMs : serveur et client).
-2. **Installation de Nginx** et **ufw** sur le serveur.
+2. **Installation de Nginx** et du **firewall** sur le serveur.
 3. **Tests manuels** pour vérifier la configuration (ex. : test de la page web avec `curl`).
 4. **Sécurisation du serveur** en appliquant des configurations renforcées.
 5. **Création de scripts** pour automatiser la configuration du firewall et tester les règles de sécurité.
