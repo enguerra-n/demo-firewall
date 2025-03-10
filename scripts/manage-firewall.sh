@@ -5,6 +5,7 @@ usage() {
     echo "Usage: $0 -a|--allow port   Autoriser le port"
     echo "       $0 -r|--reject port   Rejeter le port"
     echo "       $0 -d|--disable-ipv6   Désactiver IPv6"
+    echo "       $0 -s|--statut-rules   affiche le statut et les règles"
     exit 1
 }
 
@@ -20,7 +21,7 @@ if [ $# -eq 0 ]; then
 fi
 
 # Traitement des arguments
-while getopts "a:r:d" opt; do
+while getopts "a:r:d:s" opt; do
     case ${opt} in
         a)
             # Autoriser le port
@@ -38,6 +39,12 @@ while getopts "a:r:d" opt; do
             # Désactiver IPv6
             echo "Désactivation de l'IPv6 dans la configuration de UFW..."
             sudo sed -i 's/^IPV6=yes/IPV6=no/' /etc/default/ufw
+            ;;
+        s)
+            # afficher le statut
+            echo "statut de ufw : "
+            sudo ufw status verbose
+            exit 0
             ;;
         *)
             usage
