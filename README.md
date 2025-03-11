@@ -23,7 +23,7 @@
 - **FIREWALLD**
 - **UFW**
   
-| Critère               | `iptables` | `firewalld` | `ufw` |
+| NOM| `iptables` | `firewalld` | `ufw` |
 |---------------------- |------------|------------|------|
 | **Facilité d’utilisation** | ❌ Complexe (commandes longues) | ✅ Simple (zones et services) | ✅ Très simple (commandes courtes) |
 | **Dynamisme** | ❌ Statique (redémarrage requis) | ✅ Dynamique (modifications à chaud) | ❌ Nécessite un rechargement |
