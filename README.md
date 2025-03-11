@@ -57,7 +57,7 @@
 - **Mots de passe faibles** : Exploitation de credentials trop simples.  
 - **Mauvaise config serveur** : Ports ouverts, permissions mal définies…  
 - **Failles Zero-Day** : Vulnérabilités exploitées avant correctif.  
-- **Manque de mises à jour** : Systèmes obsolètes non patchés.  
+- **Mise à jour manquante** : Systèmes obsolètes non patchés.  
 
 ### 3️⃣ Failles réseau & attaques  
 - **MITM (Man-in-the-Middle)** : Interception des communications.  
