@@ -8,13 +8,21 @@ Vagrant.configure("2") do |config|
       dmz.vm.provider "virtualbox" do |vb|
         vb.memory = "1024"  # 1 Go de RAM pour la VM serveur
       end
-      config.vm.provision "shell", path: "set-up_iptables.sh"
+      
       dmz.vm.provision "shell", inline: <<-SHELL
+        sudo apt install -y ufw
+        sudo ufw enable
+        sudo ufw allow in on lo
+        sudo ufw allow out on lo
+        sudo ufw allow in on eth0
+        sudo ufw allow out on eth0
+        #iptables-persistent
         # Activer le routage IP
         echo 1 > /proc/sys/net/ipv4/ip_forward
         echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
         sysctl -p
       SHELL
+      dmz.vm.provision "shell", path: "set-up-ufw-dmz.sh"
     end
   end
   
