@@ -46,29 +46,25 @@
 
 
 ## 🛡️ Les différentes failles de securité **Nginx** : 
-# 1️⃣ Failles applicatives  
+### 1️⃣ Failles applicatives  
 - **Injection SQL** : Exploitation de requêtes SQL mal sécurisées.  
 - **XSS (Cross-Site Scripting)** : Injection de scripts malveillants.  
 - **CSRF (Cross-Site Request Forgery)** : Actions malveillantes à l'insu d'un utilisateur.  
 - **Faille des inclusions de fichiers** : Accès non autorisé via LFI/RFI.  
 - **API non sécurisées** : Données exposées par des API mal protégées.  
 
-# 2️⃣ Failles systèmes & configurations  
+### 2️⃣ Failles systèmes & configurations  
 - **Mots de passe faibles** : Exploitation de credentials trop simples.  
 - **Mauvaise config serveur** : Ports ouverts, permissions mal définies…  
 - **Failles Zero-Day** : Vulnérabilités exploitées avant correctif.  
 - **Manque de mises à jour** : Systèmes obsolètes non patchés.  
 
-# 3️⃣ Failles réseau & attaques  
+### 3️⃣ Failles réseau & attaques  
 - **MITM (Man-in-the-Middle)** : Interception des communications.  
 - **Phishing** : Tromperie pour voler des infos sensibles.  
 - **DDoS** : Saturation d’un serveur pour le rendre indisponible.  
 - **Exfiltration de données** : Vol de données via des canaux non sécurisés.  
 
-# 4️⃣ Failles humaines  
-- **Logiciels piratés** : Risque de malwares cachés.  
-- **Clés USB infectées** : Transmission de virus.  
-- **Manque de sensibilisation** : Erreurs humaines évitables.  
  
 
 
