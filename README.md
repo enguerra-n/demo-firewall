@@ -5,10 +5,14 @@
 - **Durcir le serveur Web Nginx** pour réduire les failles de sécurité.
 - **Mettre en place une DMZ** (zone démilitarisée) pour renforcer la sécurité réseau.
 
+  
+
 ## 🛠️ Environnement et Prérequis
 - **VM Debian** avec **Vagrant** pour gérer les machines virtuelles.
 - Utilisation de **ufw** (Uncomplicated Firewall) pour configurer le firewall.
 - **Test de pénétration** avec des outils comme **nmap** et **Wireshark** pour valider l'efficacité des sécurisations.
+
+  
 
 ## 📋 Modalités pratiques
 - Durée du projet : **2 semaines**.
@@ -18,12 +22,20 @@
   - Scripts de démonstration du fonctionnement du firewall.
   - Journal de travail.
 
+
+    
+## 📝 Etapes du Travail
+1. **Création des VMs** avec Vagrant (2 VMs : serveur et client).
+2. **Installation de Nginx** et du **firewall** sur le serveur.
+3. **Tests manuels** pour vérifier la configuration.
+4. **Sécurisation du serveur** en appliquant des configurations renforcées avec `ufw` et `IPTABLES`.
+5. **Création de scripts** pour automatiser la configuration du firewall et tester les règles de sécurité.
+
+   
+
 ## 🔥 Les différents service de firewall
-- **IPTABLE** 
-- **FIREWALLD**
-- **UFW**
   
-| Critère               | `iptables` | `firewalld` | `ufw` |
+| NOM| `iptables` | `firewalld` | `ufw` |
 |---------------------- |------------|------------|------|
 | **Facilité d’utilisation** | ❌ Complexe (commandes longues) | ✅ Simple (zones et services) | ✅ Très simple (commandes courtes) |
 | **Dynamisme** | ❌ Statique (redémarrage requis) | ✅ Dynamique (modifications à chaud) | ❌ Nécessite un rechargement |
@@ -33,24 +45,34 @@
 | **Compatibilité** | ✅ Supporté par toutes les distributions | ✅ Par défaut sur RHEL, CentOS, Fedora | ✅ Disponible sur Debian, Ubuntu (par défaut) |
 
 
+## 🛡️ Les différentes failles de securité **Nginx** : 
+### 1️⃣ Failles applicatives  
+- **Injection SQL** : Exploitation de requêtes SQL mal sécurisées.  
+- **XSS (Cross-Site Scripting)** : Injection de scripts malveillants.  
+- **CSRF (Cross-Site Request Forgery)** : Actions malveillantes à l'insu d'un utilisateur.  
+- **Faille des inclusions de fichiers** : Accès non autorisé via LFI/RFI.  
+- **API non sécurisées** : Données exposées par des API mal protégées.  
 
+### 2️⃣ Failles systèmes & configurations  
+- **Mots de passe faibles** : Exploitation de credentials trop simples.  
+- **Mauvaise config serveur** : Ports ouverts, permissions mal définies…  
+- **Failles Zero-Day** : Vulnérabilités exploitées avant correctif.  
+- **Mise à jour manquante** : Systèmes obsolètes non patchés.  
 
+### 3️⃣ Failles réseau & attaques  
+- **MITM (Man-in-the-Middle)** : Interception des communications.  
+- **Phishing** : Tromperie pour voler des infos sensibles.  
+- **DDoS** : Saturation d’un serveur pour le rendre indisponible.  
+- **Exfiltration de données** : Vol de données via des canaux non sécurisés.  
 
-## 🛡️ Sécurisation du Serveur Web Nginx
-- **Nginx** : Serveur web flexible mais vulnérable par défaut.
-- Objectif : Appliquer des configurations renforcées pour sécuriser le serveur.
+ 
 
-## 📝 Etapes du Travail
-1. **Création des VMs** avec Vagrant (2 VMs : serveur et client).
-2. **Installation de Nginx** et du **firewall** sur le serveur.
-3. **Tests manuels** pour vérifier la configuration (ex. : test de la page web avec `curl`).
-4. **Sécurisation du serveur** en appliquant des configurations renforcées.
-5. **Création de scripts** pour automatiser la configuration du firewall et tester les règles de sécurité.
 
 ## ⚙️ Outils Utilisés
-- **Vagrant** : Gestion des VMs.
+- **Vagrant** : Création et gestion des VMs.
 - **ufw** : Configuration du firewall.
-- **nmap**, **Wireshark**, **curl** : Outils de test de sécurité.
+- **iptables** : Gestion du réseau IP
+- **nmap** : Outil de test de sécurité.
 - **Nginx** : Serveur web.
 
 ## 📂 Livrables
