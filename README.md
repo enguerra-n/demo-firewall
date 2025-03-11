@@ -45,12 +45,11 @@
 | **Compatibilité** | ✅ Supporté par toutes les distributions | ✅ Par défaut sur RHEL, CentOS, Fedora | ✅ Disponible sur Debian, Ubuntu (par défaut) |
 
 
-## 🛡️ Les différentes failles de securité **Nginx** : 
+## 🛡️ Sécurisation du serveur **Nginx** : 
+
 ### 1️⃣ Failles applicatives  
-- **Injection SQL** : Exploitation de requêtes SQL mal sécurisées.  
 - **XSS (Cross-Site Scripting)** : Injection de scripts malveillants.  
-- **CSRF (Cross-Site Request Forgery)** : Actions malveillantes à l'insu d'un utilisateur.  
-- **Faille des inclusions de fichiers** : Accès non autorisé via LFI/RFI.  
+- **Faille des inclusions de fichiers** : Accès non autorisé via SSH ou autre.  
 - **API non sécurisées** : Données exposées par des API mal protégées.  
 
 ### 2️⃣ Failles systèmes & configurations  
