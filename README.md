@@ -56,6 +56,7 @@
 ## ⚙️ Outils Utilisés
 - **Vagrant** : Création et gestion des VMs.
 - **ufw** : Configuration du firewall.
+- **iptables** : Gestion du réseau IP
 - **nmap** : Outil de test de sécurité.
 - **Nginx** : Serveur web.
 
