@@ -50,7 +50,7 @@
 ## ⚙️ Outils Utilisés
 - **Vagrant** : Gestion des VMs.
 - **ufw** : Configuration du firewall.
-- **nmap**, **Wireshark**, **curl** : Outils de test de sécurité.
+- **nmap** : Outil de test de sécurité.
 - **Nginx** : Serveur web.
 
 ## 📂 Livrables
