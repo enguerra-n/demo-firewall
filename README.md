@@ -68,11 +68,6 @@
  
 
 
-## 🛡️ Sécurisation du Serveur Web Nginx
-- **Nginx** : Serveur web flexible mais vulnérable par défaut.
-- Objectif : Appliquer des configurations renforcées pour sécuriser le serveur.
-
-
 ## ⚙️ Outils Utilisés
 - **Vagrant** : Création et gestion des VMs.
 - **ufw** : Configuration du firewall.
