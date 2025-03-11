@@ -5,10 +5,14 @@
 - **Durcir le serveur Web Nginx** pour réduire les failles de sécurité.
 - **Mettre en place une DMZ** (zone démilitarisée) pour renforcer la sécurité réseau.
 
+  
+
 ## 🛠️ Environnement et Prérequis
 - **VM Debian** avec **Vagrant** pour gérer les machines virtuelles.
 - Utilisation de **ufw** (Uncomplicated Firewall) pour configurer le firewall.
 - **Test de pénétration** avec des outils comme **nmap** et **Wireshark** pour valider l'efficacité des sécurisations.
+
+  
 
 ## 📋 Modalités pratiques
 - Durée du projet : **2 semaines**.
@@ -18,10 +22,18 @@
   - Scripts de démonstration du fonctionnement du firewall.
   - Journal de travail.
 
+
+    
+## 📝 Etapes du Travail
+1. **Création des VMs** avec Vagrant (2 VMs : serveur et client).
+2. **Installation de Nginx** et du **firewall** sur le serveur.
+3. **Tests manuels** pour vérifier la configuration.
+4. **Sécurisation du serveur** en appliquant des configurations renforcées avec `ufw` et `IPTABLES`.
+5. **Création de scripts** pour automatiser la configuration du firewall et tester les règles de sécurité.
+
+   
+
 ## 🔥 Les différents service de firewall
-- **IPTABLE** 
-- **FIREWALLD**
-- **UFW**
   
 | NOM| `iptables` | `firewalld` | `ufw` |
 |---------------------- |------------|------------|------|
@@ -40,15 +52,9 @@
 - **Nginx** : Serveur web flexible mais vulnérable par défaut.
 - Objectif : Appliquer des configurations renforcées pour sécuriser le serveur.
 
-## 📝 Etapes du Travail
-1. **Création des VMs** avec Vagrant (2 VMs : serveur et client).
-2. **Installation de Nginx** et du **firewall** sur le serveur.
-3. **Tests manuels** pour vérifier la configuration.
-4. **Sécurisation du serveur** en appliquant des configurations renforcées avec `ufw` et `IPTABLES`.
-5. **Création de scripts** pour automatiser la configuration du firewall et tester les règles de sécurité.
 
 ## ⚙️ Outils Utilisés
-- **Vagrant** : Gestion des VMs.
+- **Vagrant** : Création et gestion des VMs.
 - **ufw** : Configuration du firewall.
 - **nmap** : Outil de test de sécurité.
 - **Nginx** : Serveur web.
