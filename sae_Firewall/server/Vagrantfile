@@ -4,7 +4,7 @@ Vagrant.configure("2") do |config|
       server.vm.box = "debian/buster64"
       server.vm.hostname = "server"
       #server.vm.network "private_network", ip: "192.168.56.100"
-      server.vm.network "private_network", ip: "192.168.56.100", virtualbox__intnet: "net_interne_56"
+      server.vm.network "private_network", ip: "192.168.56.100", virtualbox__intnet: "net_interne_56", device: "eth1"
       server.vm.provider "virtualbox" do |vb|
         vb.memory = "1024"  # 1 Go de RAM pour la VM serveur
       end
@@ -18,8 +18,7 @@ Vagrant.configure("2") do |config|
         apt-get install -y nginx ufw
         # Configuration de ufw (activation et configuration de base)
         #ufw allow 80
-        sudo ufw enable
-        sudo ufw status
+        #yes y | sudo ufw enable
         chmod +x /tmp/manage-firewall.sh
         # application index
         cp /tmp/index.html /var/www/html/index.html
