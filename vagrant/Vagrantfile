@@ -1,48 +1,87 @@
 Vagrant.configure("2") do |config|
-    # Configuration de la VM serveur
-    config.vm.define "server" do |server|
-      server.vm.box = "debian/buster64"
-      server.vm.hostname = "server"
-      server.vm.network "private_network", ip: "192.168.50.4"
-      server.vm.provider "virtualbox" do |vb|
-        vb.memory = "1024"  # 1 Go de RAM pour la VM serveur
-      end
-      server.vm.provision "shell", inline: <<-SHELL
-        # Mise à jour des paquets
-        apt-get update && apt-get upgrade -y
-        # Installation de Nginx
-        apt-get install -y nginx
-        # Installation de ufw (pare-feu)
-        apt-get install -y ufw
-        # Configuration de ufw (activation et configuration de base)
-        ufw allow 'Nginx HTTP'
-        ufw enable
-        ufw status
-        # Création d'une page HTML simple
-        echo '<html><body><h1>Page Statique Nginx</h1></body></html>' > /var/www/html/index.html
-        # Redémarrer nginx pour s'assurer qu'il sert la page
-        systemctl restart nginx
-      SHELL
+  # Configuration de la VM serveur
+  config.vm.define "server" do |server|
+    server.vm.box = "debian/buster64"
+    server.vm.hostname = "server"
+    server.vm.network "private_network", ip: "192.168.50.4"
+    
+    server.vm.provider "virtualbox" do |vb|
+      vb.memory = "1024"  # 1 Go de RAM pour la VM serveur
     end
-  
-    # Configuration de la VM test
-    config.vm.define "test" do |test|
-      test.vm.box = "debian/buster64"
-      test.vm.hostname = "test"
-      test.vm.network "private_network", ip: "192.168.50.200"
-      test.vm.provider "virtualbox" do |vb|
-        vb.memory = "1024"  # 1 Go de RAM pour la VM test
-      end
-      test.vm.provision "shell", inline: <<-SHELL
-        # Mise à jour des paquets
-        apt-get update && apt-get upgrade -y
-        # Installation de curl et nmap pour tester l'accès web et la sécurité
-        apt-get install -y curl nmap
-        # Test de l'accès à la page web du serveur
-        #curl http://192.168.50.4/
-        # Scanner les ports ouverts du serveur pour vérifier la sécurité
-        #nmap 192.168.50.4
-      SHELL
-    end
+
+    server.vm.provision "shell", inline: <<-SHELL
+      # Mise à jour des paquets
+      apt-get update && apt-get upgrade -y
+      
+      # Installation de Nginx
+      apt-get install -y nginx
+      
+      # Installation de ufw (pare-feu)
+      apt-get install -y ufw
+
+      # Configuration de ufw (activation et configuration de base)
+      ufw allow 'Nginx HTTP'
+      ufw enable
+      ufw status
+
+      # Appliquer la configuration Nginx pour limiter les connexions et requêtes
+      cat > /etc/nginx/nginx.conf <<EOL
+      user www-data;
+      worker_processes auto;
+      pid /run/nginx.pid;
+      include /etc/nginx/modules-enabled/*.conf;
+
+      events {
+          worker_connections 1024;
+      }
+
+      http {
+          limit_conn_zone $binary_remote_addr zone=addr:10m;
+          limit_req_zone $binary_remote_addr zone=addr_req:10m rate=10r/s;
+
+          server {
+              listen 80;
+
+              location / {
+                  limit_conn addr 10;
+                  limit_req zone=addr_req burst=20 nodelay;
+                  root /var/www/html;
+                  index index.html;
+              }
+          }
+      }
+      EOL
+
+      # Création d'une page HTML simple
+      echo '<html><body><h1>Page Statique Nginx</h1></body></html>' > /var/www/html/index.html
+
+      # Redémarrer nginx pour s'assurer qu'il sert la page avec la configuration DDoS
+      systemctl restart nginx
+    SHELL
   end
-  
+
+  # Configuration de la VM test
+  config.vm.define "test" do |test|
+    test.vm.box = "debian/buster64"
+    test.vm.hostname = "test"
+    test.vm.network "private_network", ip: "192.168.50.200"
+
+    test.vm.provider "virtualbox" do |vb|
+      vb.memory = "1024"  # 1 Go de RAM pour la VM test
+    end
+
+    test.vm.provision "shell", inline: <<-SHELL
+      # Mise à jour des paquets
+      apt-get update && apt-get upgrade -y
+
+      # Installation de curl et nmap pour tester l'accès web et la sécurité
+      apt-get install -y curl nmap
+
+      # Test de l'accès à la page web du serveur
+      # curl http://192.168.50.4/
+      
+      # Scanner les ports ouverts du serveur pour vérifier la sécurité
+      nmap 192.168.50.4
+    SHELL
+  end
+end
