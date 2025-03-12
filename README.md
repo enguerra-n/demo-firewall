@@ -50,10 +50,8 @@
 ### 1️⃣ Failles applicatives  
 - **XSS (Cross-Site Scripting)** : Injection de scripts malveillants.  
 - **Faille des inclusions de fichiers** : Accès non autorisé via SSH ou autre.  
-- **API non sécurisées** : Données exposées par des API mal protégées.  
 
 ### 2️⃣ Failles systèmes & configurations  
-- **Mots de passe faibles** : Exploitation de credentials trop simples.  
 - **Mauvaise config serveur** : Ports ouverts, permissions mal définies…  
 - **Failles Zero-Day** : Vulnérabilités exploitées avant correctif.  
 - **Mise à jour manquante** : Systèmes obsolètes non patchés.  
@@ -62,7 +60,6 @@
 - **MITM (Man-in-the-Middle)** : Interception des communications.  
 - **Phishing** : Tromperie pour voler des infos sensibles.  
 - **DDoS** : Saturation d’un serveur pour le rendre indisponible.  
-- **Exfiltration de données** : Vol de données via des canaux non sécurisés.  
 
  
 
