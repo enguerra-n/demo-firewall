@@ -1,0 +1,13 @@
+4.4 Limiter les connexions (règles limit)
+Pour éviter les attaques par force brute, vous pouvez limiter les connexions à un 
+service comme SSH. Par exemple, pour limiter les connexions SSH à 
+six tentatives en 30 secondes, utilisez la commande suivante :
+
+sudo ufw limit ssh/tcp
+
+Cette règle ajoute une protection contre les attaques répétées. 
+Si une adresse IP tente de se connecter plus de six fois dans une 
+fenêtre de 30 secondes, les connexions supplémentaires seront temporairement 
+bloquées. Notez que la limite de 30 secondes est une valeur par défaut d’UFW,
+ et elle ne peut pas être modifiée sans configurer directement les règles via 
+ iptables.
