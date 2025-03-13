@@ -6,7 +6,11 @@ Vagrant.configure("2") do |config|
       internet.vm.provider "virtualbox" do |vb|
         vb.memory = "1024"
       end
+      internet.vm.provision "file", source: "DDOS.sh", destination: "/tmp/ddos.sh"
+      internet.vm.provision "file", source: "test.sh", destination: "/tmp/test.sh"
       internet.vm.provision "shell", inline: <<-SHELL
+        sudo apt install apache2-utils -y
+        chmod +x /tmp/ddos.sh /tmp/test.sh
         sudo ip route add 192.168.56.0/24 via 192.168.57.254
         sudo ip route add 192.168.58.0/24 via 192.168.57.254
         apt-get update && apt-get upgrade -y

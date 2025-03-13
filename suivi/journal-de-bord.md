@@ -58,33 +58,83 @@
 
 ---
 
-### [JJ/MM/AAAA]
+### [07/03/2025]
 - **Objectifs du jour :**
-  - [Décrire les objectifs de la journée]
+  - créer le FW
 - **Tâches réalisées :**
-  - [Détail des tâches accomplies]
+  - FW + règles + schéma réseau
 - **Problèmes rencontrés :**
-  - [Liste des problèmes et blocages]
+  - RAS
 - **Solutions apportées :**
-  - [Solutions trouvées ou actions à mener]
+  - RAS
 - **Notes et réflexions :**
-  - [Observations, idées, remarques importantes]
+  - RAS
 - **TO DO**
-  - [A faire pour la prochaine séance]
+  - infra DMZ
 
 ---
 
-## Bilan Hebdomadaire
-
-- **Points positifs :**
-  - [Ce qui a bien fonctionné]
-- **Points à améliorer :**
-  - [Axes d'amélioration]
-- **Prochaines étapes :**
-  - [Tâches à venir et objectifs à atteindre]
+### [10/03/2025]
+- **Objectifs du jour :**
+  - DMZ + script règles UFW
+- **Tâches réalisées :**
+  - DMZ "fake" + le script
+- **Problèmes rencontrés :**
+  - RAS
+- **Solutions apportées :**
+  - RAS
+- **Notes et réflexions :**
+  - RAS
+- **TO DO**
+  - faire les tests unitaire
 
 ---
 
-## Ressources et Liens Utiles
-- [Lien vers un document important]
-- [Ressources externes pertinentes]
+### [11/03/2025]
+- **Objectifs du jour :**
+  - anti DDOS sur NGINX
+- **Tâches réalisées :**
+  - anti DDOS
+- **Problèmes rencontrés :**
+  - RAS
+- **Solutions apportées :**
+  - RAS
+- **Notes et réflexions :**
+  - RAS
+- **TO DO**
+  - infra DMZ complète
+
+---
+
+### [12/03/2025]
+- **Objectifs du jour :**
+  - création de la nouvelle DMZ
+- **Tâches réalisées :**
+  - nouvelle DMZ crée et fonctionnelle
+- **Problèmes rencontrés :**
+  - RAS
+- **Solutions apportées :**
+  - RAS
+- **Notes et réflexions :**
+  - RAS
+- **TO DO**
+  - optimisation des vagrantfiles
+
+---
+
+### [13/03/2025]
+- **Objectifs du jour :**
+  - affinage Vagrantfile + script
+- **Tâches réalisées :**
+  - ceux de l'objectif
+- **Problèmes rencontrés :**
+  - RAS
+- **Solutions apportées :**
+  - RAS
+- **Notes et réflexions :**
+  - RAS
+- **TO DO**
+  - Relecture
+
+---
+

@@ -1,7 +1,4 @@
 #!/bin/bash
-folderserver = ../sae_Firewall/server
-folderclient = ../sae_Firewall/client
-
 
 # check Vagrant install
 if ! command -v vagrant &> /dev/null; then
@@ -34,5 +31,9 @@ vagrant up
 popd
 
 pushd ../sae_Firewall/INTERNET/
+vagrant up
+popd
+
+pushd ../sae_Firewall/router/
 vagrant up
 popd
