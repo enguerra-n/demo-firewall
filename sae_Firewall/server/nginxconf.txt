@@ -1,0 +1,28 @@
+events {
+        worker_connections 768;
+        # multi_accept on;
+}
+
+http {
+    # Définir la zone pour limiter les requêtes (10 requêtes par minute par IP)
+    limit_req_zone $binary_remote_addr zone=req_limit_per_ip:10m rate=10r/m;
+
+    # Autres directives globales de configuration, comme les modules, etc.
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+    server {
+        listen 80;
+
+        # Appliquer la limitation des requêtes (10 requêtes par minute par IP)
+        limit_req zone=req_limit_per_ip burst=10 nodelay;
+
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+            try_files $uri $uri/ =404;
+        }
+    }
+}
