@@ -24,7 +24,7 @@ sudo ufw route allow to 192.168.56.100 port 443
 
 #autoriser le LAN a ssh le srv seulement
 sudo ufw allow from 192.168.56.100 to 192.168.56.100 port 22
-
+sudo ufw route allow in on eth1 to any
 
 sudo ufw allow in on eth1 to any port 80
 sudo ufw allow in on eth1 to any port 443
