@@ -83,7 +83,6 @@ Les dossiers sont organisés de la façon suivante :
 │   │   └── Vagrantfile
 │   ├── DMZ
 │   │   ├── set-up-ufw-dmz.sh
-│   │   ├── set-up_iptables.sh
 │   │   ├── test.sh
 │   │   └── Vagrantfile
 │   ├── INTERNET
@@ -111,10 +110,11 @@ Les dossiers sont organisés de la façon suivante :
 ````
 
 Nous avons choisi de créer un Vagrantfile par machine afin d'avoir un visiblité par machine.
+
 ## Mise en place des VMs
 ### Linux
 #### prérequis
-Avoir installé le paquet `virtual box` et `vagrant` sur la machine.
+Avoir d'installé le paquet `virtual box` et `vagrant` sur la machine.
 
 #### lancement des VMs
 un script bash `construct-vm.sh` est disponnible pour lancer toute les VM au chemin suivant : `demo-firewall\scripts\construct-vm.sh`.
@@ -130,6 +130,15 @@ vous devrez vous déplacer sur chaque dossier de VM pour executer un `vagrant up
 Sur chaque machine, nous avons implémenté un script qui effectue des tests dans `/tmp` qui se nomme `test.sh`,celui-ci effectue des tests différents en fonction des machines.
 
 Nous avons également effectué un test de DDOS depuis `INTERNET` et `Client` qui utilise le paquet `ab`
+
+## Sécurisation
+Nous avons de la sécurité appliqué principalement sur la machine DMZ avec `ufw` en filtrant les flux :
+![Network_rules](doc_util/schema_network_rules.png)
+
+
+Un script `manage-firewall.sh` est disponible sur `/tmp/manage-firewall.sh` pour le serveur, celui-ci permet une administration simple d'ufw, sans avoir besoin de connaitre les commandes.
+
+
 
 
 ## 📂 Livrables
