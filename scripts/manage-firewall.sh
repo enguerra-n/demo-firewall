@@ -55,25 +55,25 @@ while getopts "a:r:izS:H:s:h:l:ed" opt; do
             exit 0
             ;;
         S)
-            # Autoriser le port
+            # refuse le subnet
             SUBNET=$OPTARG
             echo "Autorisation du subnet $SUBNET"
             sudo ufw deny from "$SUBNET" to any 
             ;;
         H)
-            # Autoriser le port
+            # refuser l'host
             HOST=$OPTARG
             echo "Autorisation de l hote $HOST"
             sudo ufw deny from "$HOST" to any
             ;;
         s)
-            # Autoriser le port
+            # Autoriser le subnet
             SUBNET=$OPTARG
             echo "Autorisation du subnet $SUBNET"
             sudo ufw allow from "$SUBNET" to any
             ;;
         h)
-            # Autoriser le port
+            # Autoriser l'host
             HOST=$OPTARG
             echo "Autorisation de l hote $HOST"
             sudo ufw allow from "$HOST" to any
