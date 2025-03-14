@@ -10,17 +10,14 @@
 ## 🛠️ Environnement et Prérequis
 - **VM Debian** avec **Vagrant** pour gérer les machines virtuelles.
 - Utilisation de **ufw** (Uncomplicated Firewall) pour configurer le firewall.
-- **Test de pénétration** avec des outils comme **nmap** et **Wireshark** pour valider l'efficacité des sécurisations.
+- **Test de pénétration** avec des outils comme **nmap** pour valider l'efficacité des sécurisations.
 
   
 
 ## 📋 Modalités pratiques
 - Durée du projet : **2 semaines**.
-- Travail en **équipe de 2** (ou 3 dans un effectif impair).
-- Dépôt sur **GitHub** (`demo-firewall`) incluant :
-  - Scripts de configuration des VMs.
-  - Scripts de démonstration du fonctionnement du firewall.
-  - Journal de travail.
+- Travail en **équipe de 2**.
+
 
 
     
@@ -28,7 +25,7 @@
 1. **Création des VMs** avec Vagrant (2 VMs : serveur et client).
 2. **Installation de Nginx** et du **firewall** sur le serveur.
 3. **Tests manuels** pour vérifier la configuration.
-4. **Sécurisation du serveur** en appliquant des configurations renforcées avec `ufw` et `IPTABLES`.
+4. **Sécurisation du serveur** en appliquant des configurations renforcées avec `ufw`.
 5. **Création de scripts** pour automatiser la configuration du firewall et tester les règles de sécurité.
 
    
@@ -61,15 +58,77 @@
 - **Phishing** : Tromperie pour voler des infos sensibles.  
 - **DDoS** : Saturation d’un serveur pour le rendre indisponible.  
 
- 
-
-
 ## ⚙️ Outils Utilisés
 - **Vagrant** : Création et gestion des VMs.
+- **VirtualBon** : permet la virtualisation.
 - **ufw** : Configuration du firewall.
-- **iptables** : Gestion du réseau IP
+- **iptables** : ufw se base dessus.
 - **nmap** : Outil de test de sécurité.
+- **ab** : Outil pour exécuter un gros nombre de requête.
 - **Nginx** : Serveur web.
+
+## Structure du projet
+
+Les dossiers sont organisés de la façon suivante : 
+.
+├── README.md
+├── doc_util
+│   ├── info_VB.txt
+│   ├── lien_web.txt
+│   └── network.png
+├── sae_Firewall
+│   ├── client
+│   │   ├── DDOS.sh
+│   │   ├── test.sh
+│   │   └── Vagrantfile
+│   ├── DMZ
+│   │   ├── set-up-ufw-dmz.sh
+│   │   ├── set-up_iptables.sh
+│   │   ├── test.sh
+│   │   └── Vagrantfile
+│   ├── INTERNET
+│   │   ├── DDOS.sh
+│   │   ├── test.sh
+│   │   └── Vagrantfile
+│   ├── router
+│   │   ├── test.sh
+│   │   └── Vagrantfile
+│   └── server
+│       ├── avail.txt
+│       ├── DDOS.txt
+│       ├── index.html
+│       ├── nginxconf.txt
+│       ├── test.sh
+│       └── Vagrantfile
+├── scripts
+│   ├── construct-vm.sh
+│   ├── info_command.txt
+│   └── manage-firewall.sh
+├── suivi
+│   └── journal-de-bord.md
+└── vagrant
+    └── Vagrantfile
+
+## Mise en place des VMs
+### Linux
+#### prérequis
+Avoir installé le paquet `virtual box` et `vagrant` sur la machine.
+
+#### lancement des VMs
+un script bash `construct-vm.sh` est disponnible pour lancer toute les VM au chemin suivant : `demo-firewall\scripts\construct-vm.sh`.
+
+### Windows
+#### prérequis
+installer le paquet [Vagrant](https://developer.hashicorp.com/vagrant/install?product_intent=vagrant "Vagrant").
+
+#### start
+vous devrez vous déplacer sur chaque dossier de VM pour executer un `vagrant up`
+
+## Début des tests
+Sur chaque machine, nous avons implémenté un script qui effectue des tests dans `/tmp` qui se nomme `test.sh`,celui-ci effectue des tests différents en fonction des machines.
+
+Nous avons également effectué un test de DDOS depuis `INTERNET` et `Client` qui utilise le paquet `ab`
+
 
 ## 📂 Livrables
 - Scripts de configuration des VMs.
