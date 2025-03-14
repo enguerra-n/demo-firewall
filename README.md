@@ -70,7 +70,7 @@
 ## Structure du projet
 
 Les dossiers sont organisés de la façon suivante : 
-.
+````.
 ├── README.md
 ├── doc_util
 │   ├── info_VB.txt
@@ -107,8 +107,10 @@ Les dossiers sont organisés de la façon suivante :
 ├── suivi
 │   └── journal-de-bord.md
 └── vagrant
-    └── Vagrantfile
+    └── Vagrantfile.
+````
 
+Nous avons choisi de créer un Vagrantfile par machine afin d'avoir un visiblité par machine.
 ## Mise en place des VMs
 ### Linux
 #### prérequis
