@@ -60,7 +60,7 @@
 
 ## ⚙️ Outils Utilisés
 - **Vagrant** : Création et gestion des VMs.
-- **VirtualBon** : permet la virtualisation.
+- **VirtualBox** : permet la virtualisation.
 - **ufw** : Configuration du firewall.
 - **iptables** : ufw se base dessus.
 - **nmap** : Outil de test de sécurité.
